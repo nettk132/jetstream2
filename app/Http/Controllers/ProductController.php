@@ -14,7 +14,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
+        $products = product::all();
 
         // ส่งตัวแปร $products ไปยังไฟล์ index ด้วย Inertia
         return Inertia::render('product/index', [

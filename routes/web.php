@@ -2,6 +2,7 @@
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use App\Models\Product;
 use Inertia\Inertia;
 use App\Http\Controllers\ProductController;
 /*
@@ -40,8 +41,11 @@ Route::middleware([
     'verified',
 ])->group(function () {
     Route::get('/Product', function () {
-        return Inertia::render('Product');
-    })->name('Product');
+        $products = product::all();
+        return Inertia::render('product/index', [
+            'products' => $products
+        ]);
+    })->name('product');
 });
 
-Route::get('/Product',[ProductController::class,'index'])->name('product');
+// Route::get('/Product',[ProductController::class,'index'])->name('product');

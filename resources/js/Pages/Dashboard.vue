@@ -1,6 +1,12 @@
 <script setup>
 import AppLayout from '@/Layouts/AppLayout.vue';
 import Welcome from '@/Components/Welcome.vue';
+
+defineProps({
+    tokens: Array,
+    availablePermissions: Array,
+    defaultPermissions: Array,
+});
 </script>
 
 <template>
@@ -9,6 +15,11 @@ import Welcome from '@/Components/Welcome.vue';
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 Dashboardnfcvnmcvb
             </h2>
+<!--
+            <div v-for="product in products" :key="product.id">
+  <h2>{{ product.name_product }}  {{ product.price }} บาท</h2>
+
+  </div> -->
         </template>
 
         <div class="py-12">
